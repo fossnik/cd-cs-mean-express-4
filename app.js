@@ -1,6 +1,9 @@
 var express = require('express');
 var app = express();
 
+var bodyParser = require('body-parser');
+var parseUrlencoded = bodyParser.urlencoded({extended:false});
+
 // use that public folder (static middleware)
 app.use(express.static('public'));
 
