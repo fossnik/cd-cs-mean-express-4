@@ -17,13 +17,17 @@ var someCities = {"Providence": "Rhode Island",
 									"Edinburgh": "Scotland"};
 
 app.get('/cities', function(request, response){
+	// query validation
 	if (request.query.limit > 0) {
 		if (request.query.limit > Object.keys(someCities).length) {
+			// send a 401 status error because the query is NG
 			send.status(401);
 			response.end();
 		}
+		// keys returns properties from someCities object - slice to query size
 		response.json(Object.keys(someCities).slice(0, request.query.limit));
 	} else {
+		// serializes someCities object
 		response.json(someCities);
 	}
 });
