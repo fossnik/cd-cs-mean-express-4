@@ -3,7 +3,8 @@ $(function(){
 
 	function appendToList(someCities) {
 		var html = "";
-		someCities.forEach(function(city){
+		// have to use Object.keys so forEach can have an array, bc objecs NG
+		Object.keys(someCities).forEach(function(city){
 			html += "<option>" + city;
 		})
 		$('.cities').html(html);
