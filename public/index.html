@@ -1,8 +1,20 @@
 <html>
 	<h1>MEAN Express #4 - Cities</h1>
 
+	<table class="table" style="background: #aff;">
+		<thead> OUR CITIES </thead>
+		<tbody>
+			<tr>
+				<td class='cities'></td>
+			</tr>
+		</tbody>
+	</table>
+
 	<form>
-		<select class='cities'></select>
+		<legend>Input a New City</legend>
+		<input name="city" required="true" minlength="4" placeholder="city"><br/>
+		<input name="state" required="true" minlength="2" placeholder="state">
+		<input type="submit">
 	</form>
 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
