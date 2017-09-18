@@ -53,6 +53,16 @@ app.get('/cities/:city', function(request, response){
 	}
 });
 
+// Using multiple route handlers is useful for re-using middleware that load resources, perform validations, authentication, etc.
+app.post('/cities', parseUrlencoded, function(request, response) {
+	// reading request data - returns form data
+	var newCity = request.body;
+	// adds new city to cities object
+	cities[newCity.name] = newCity.description;
+	// sets 201 Created status code and responds with new city name
+	response.status(201).json(newCity.name);
+});
+
 // serving up fresh HTML on port 8000
 app.listen(8000, function () {
 	console.log("Serving up HTML on Port 8000");
