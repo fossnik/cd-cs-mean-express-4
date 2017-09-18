@@ -1,11 +1,13 @@
 $(function(){
-	$.get( '/cities', function(someCities) {
+	$.get( '/cities', appendToList);
+
+	function appendToList(someCities) {
 		var html = "";
 		someCities.forEach(function(city){
 			html += "<option>" + city;
 		})
 		$('.cities').html(html);
-	});
+	}
 });
 
 $(function(){
