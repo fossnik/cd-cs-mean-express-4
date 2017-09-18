@@ -1,5 +1,5 @@
 $(function(){
-	$.get( '/cities', appendToList);
+	$.get('/cities', appendToList);
 
 	function appendToList(someCities) {
 		var html = "";
@@ -9,9 +9,7 @@ $(function(){
 		})
 		$('.cities').html(html);
 	}
-});
 
-$(function(){
 	$.get('/cities', appendToList);
 	$('form').on('submit', function(event) {
 		event.preventDefault();
