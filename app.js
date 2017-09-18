@@ -31,16 +31,16 @@ app.get('/cities', function(request, response){
 // "normalizing" request parameter (case insensitivity)
 app.param('city', function(request, response, next){
 	// convert 'providence' to 'Providence' - passthrough
-	request.params.cityLower = request.params.city.slice(0,1).toUpperCase() + request.params.city.slice(1).toLowerCase();
+	request.params.cityCase = request.params.city.slice(0,1).toUpperCase() + request.params.city.slice(1).toLowerCase();
 	next();
 });
 
 // 2nd route - returns state from the relevant key-value pair (city-state)
 app.get('/cities/:city', function(request, response){
-	var state = someCities[request.params.cityLower];
+	var state = someCities[request.params.cityCase];
 	if (!state) {
 		// state not found
-		response.status(404).json('No description found for ' + request.params.cityLower);
+		response.status(404).json('No description found for ' + request.params.cityCase);
 	} else {
 		response.json(state);
 	}
