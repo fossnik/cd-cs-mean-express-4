@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/fossnik/cd-cs-mean-express-4#readme",
   "dependencies": {
+    "body-parser": "^1.18.1",
     "express": "^4.15.4"
   }
 }
