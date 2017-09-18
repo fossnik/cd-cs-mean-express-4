@@ -58,7 +58,7 @@ app.post('/cities', parseUrlencoded, function(request, response) {
 	// reading request data - returns form data
 	var newCity = request.body;
 	// adds new city to cities object
-	cities[newCity.name] = newCity.description;
+	someCities[newCity.name] = newCity.description;
 	// sets 201 Created status code and responds with new city name
 	response.status(201).json(newCity.name);
 });
