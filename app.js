@@ -66,7 +66,8 @@ app.post('/cities', parseUrlencoded, function(request, response) {
 // new app delete route
 app.delete('/cities/:city', function(request, response){
 	delete someCities[request.city];
-})
+	response.sendStatus(200);
+});
 
 
 // serving up fresh HTML on port 8000
