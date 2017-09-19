@@ -34,4 +34,20 @@ $(function(){
 			form.trigger('reset');
 		});
 	});
+	$(function(){
+		$('.city-list').on('click', 'a[data-city]', function(event){
+			if (!confirm('Are you sure ?')) {
+				return false;
+			}
+			// the link element that was clicked
+			var target - $(event.currentTarget);
+
+			$.ajax({
+				type: 'DELETE', url: '/cities/' + target.data('city')
+			}).done(function() {
+				// removes li element containing the link
+				target.parents('li').remove():
+			});
+		});
+	});
 });
