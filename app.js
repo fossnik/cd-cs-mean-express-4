@@ -64,8 +64,8 @@ app.post('/cities', parseUrlencoded, function(request, response) {
 });
 
 // new app delete route
-app.delete('/blocks/:name', function(request, response){
-
+app.delete('/cities/:city', function(request, response){
+	delete someCities[request.city];
 })
 
 
