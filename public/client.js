@@ -18,14 +18,15 @@ $(function(){
 		var cityData = form.serialize();
 		$.ajax({
 			type: 'POST', url: '/cities', data: cityData
-		}).done(function(cityName){
+		}).success(function(cities){
+			console.log(cities);
 			// appendToList function expects and array of cities
 			// cityName is array with the new city as its single argument.
-			appendToList([cityName]);
+			appendToList(cities);
 				var list = [];
 				var content;
 				// builds out html block for each city - serial
-				Object.keys(someCities).forEach(function(city){
+				Object.keys(cities).forEach(function(city){
 					content = '<a href="/cities/'+city+'">'+city+'</a>';
 					list.push($('<li>', { html: content}));
 				})
