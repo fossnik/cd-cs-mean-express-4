@@ -19,7 +19,7 @@ $(function(){
 		$.ajax({
 			type: 'POST', url: '/cities', data: cityData
 		}).success(function(cities){
-			// appendToList function expects and array of cities
+			// appendToList function expects an array of cities
 			// cityName is array with the new city as its single argument.
 			appendToList(cities);
 				var list = [];
