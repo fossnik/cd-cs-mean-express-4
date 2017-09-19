@@ -40,13 +40,13 @@ $(function(){
 				return false;
 			}
 			// the link element that was clicked
-			var target - $(event.currentTarget);
+			var target = $(event.currentTarget);
 
 			$.ajax({
 				type: 'DELETE', url: '/cities/' + target.data('city')
 			}).done(function() {
 				// removes li element containing the link
-				target.parents('li').remove():
+				target.parents('li').remove();
 			});
 		});
 	});
