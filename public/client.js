@@ -6,6 +6,7 @@ $(function(){
 		// have to use Object.keys so forEach can have an array, bc objecs NG
 		Object.keys(someCities).forEach(function(city){
 			html += "<li>" + city + "</li>";
+			html += '<a href="#" data-city="'+city+'">&nbsp;DELETE</a>';
 		})
 		$('.cities').html(html);
 	}
@@ -22,13 +23,13 @@ $(function(){
 			// appendToList function expects an array of cities
 			// cityName is array with the new city as its single argument.
 			appendToList(cities);
-				var list = [];
-				var content;
-				// builds out html block for each city - serial
-				Object.keys(cities).forEach(function(city){
-					content = '<a href="/cities/'+city+'">'+city+'</a>';
-					list.push($('<li>', { html: content}));
-				})
+			var list = [];
+			var content;
+			// builds out html block for each city - serial
+			Object.keys(cities).forEach(function(city){
+				content = '<a href="/cities/'+city+'">'+city+'</a>';
+				list.push($('<li>', { html: content}));
+			})
 			// cleans up text input fields
 			form.trigger('reset');
 		});
