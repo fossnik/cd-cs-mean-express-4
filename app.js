@@ -63,6 +63,12 @@ app.post('/cities', parseUrlencoded, function(request, response) {
 	response.status(201).json(someCities);
 });
 
+// new app delete route
+app.delete('/blocks/:name', function(request, response){
+
+})
+
+
 // serving up fresh HTML on port 8000
 app.listen(8000, function () {
 	console.log("Serving up HTML on Port 8000");
