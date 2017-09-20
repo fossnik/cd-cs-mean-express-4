@@ -6,13 +6,15 @@ $(function(){
 		// have to use Object.keys so forEach can have an array, bc objecs NG
 		Object.keys(someCities).forEach(function(city){
 			html += "<li>" + city + "</li>";
-			html += '<a href="#" data-city="'+city+'">&nbsp;DELETE</a>';
+			html += '<a href="#" data-city="'+city+'">REMOVE</a>';
 		})
 		$('.cities').html(html);
 	}
 
 	$.get('/cities', appendToList);
+	// this is a listener to the submit event on the form element.
 	$('form').on('submit', function(event) {
+		// preventDefault avoids automatic form submission.
 		event.preventDefault();
 		var form = $(this);
 		// serialize transforms form data to URL-encoded notation.
