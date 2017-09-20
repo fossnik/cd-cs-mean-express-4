@@ -38,20 +38,19 @@ $(function(){
 			form.trigger('reset');
 		});
 	});
-	$(function(){
-		$('.city-list').on('click', 'a[data-city]', function(event){
-			if (!confirm('Are you sure ?')) {
-				return false;
-			}
-			// the link element that was clicked
-			var target = $(event.currentTarget);
+	// this is the implementation of the delete city functionality.
+	$('.city-list').on('click', 'a[data-city]', function(event){
+		if (!confirm('Are you sure ?')) {
+			return false;
+		}
+		// the link element that was clicked
+		var target = $(event.currentTarget);
 
-			$.ajax({
-				type: 'DELETE', url: '/cities/' + target.data('city')
-			}).done(function() {
-				// removes li element containing the link
-				target.parents('li').remove();
-			});
+		$.ajax({
+			type: 'DELETE', url: '/cities/' + target.data('city')
+		}).done(function() {
+			// removes li element containing the link
+			target.parents('li').remove();
 		});
 	});
 });
