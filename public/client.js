@@ -14,13 +14,13 @@ $(function(){
 	$.get('/cities', appendToList);
 	// this is a listener to the submit event on the form element.
 	$('form').on('submit', function(event) {
-		// preventDefault avoids automatic form submission.
+		// preventDefault prevents the form from being immediately submitted.
 		event.preventDefault();
 		var form = $(this);
-		// serialize transforms form data to URL-encoded notation.
-		var cityData = form.serialize();
+		// structures form data for AJAX (URL-encoded notation)
+		var citySubmitted = form.serialize();
 		$.ajax({
-			type: 'POST', url: '/cities', data: cityData
+			type: 'POST', url: '/cities', data: citySubmitted
 		}).success(function(cities){
 			// appendToList function expects an array of cities
 			// cityName is array with the new city as its single argument.
