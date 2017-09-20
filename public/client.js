@@ -29,15 +29,7 @@ $(function(){
 			// appendToList function expects an array of cities
 			// citySubmitted is array with the new city as its single argument.
 			appendToList(cities);
-			var list = [];
-			var content;
-			// creates an array of objects (each city an object)
-			Object.keys(cities).forEach(function(city){
-				content = '<a href="/cities/'+city+'">'+city+'</a>';
-				list.push($('<tr>', { html:content }));
-			})
-			$('.cities-list').a(list);
-			// cleans up text input fields
+			// cleans up text input fields subsequent to form submission
 			form.trigger('reset');
 		});
 	});
