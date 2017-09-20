@@ -14,7 +14,6 @@ $(function(){
 		$('.cities-list').html(html);
 	}
 
-	$.get('/cities', appendToList);
 	// this is a listener to the submit event on the form element.
 	$('form').on('submit', function(event) {
 		// preventDefault prevents the form from being immediately submitted.
@@ -28,8 +27,16 @@ $(function(){
 		}).success(function(cities){
 			// appendToList function expects an array of cities
 			// citySubmitted is array with the new city as its single argument.
-			appendToList(cities);
-			// cleans up text input fields subsequent to form submission
+			// appendToList(cities);
+			var list = [];
+			var content;
+			// creates an array of objects (each city an object)
+			Object.keys(cities).forEach(function(city){
+				content = '<a href="/cities/'+city+'">'+city+'</a>';
+				list.push($('<tr>', { html:content }));
+			})
+			$('.cities-list').html(list);
+			// clears input fields after submit
 			form.trigger('reset');
 		});
 	});
