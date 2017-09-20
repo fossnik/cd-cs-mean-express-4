@@ -25,14 +25,14 @@ $(function(){
 			type: 'POST', url: '/cities', data: citySubmitted
 		}).success(function(cities){
 			// appendToList function expects an array of cities
-			// cityName is array with the new city as its single argument.
+			// citySubmitted is array with the new city as its single argument.
 			appendToList(cities);
 			var list = [];
 			var content;
-			// builds out html block for each city - serial
+			// creates an array of objects (each city an object)
 			Object.keys(cities).forEach(function(city){
 				content = '<a href="/cities/'+city+'">'+city+'</a>';
-				list.push($('<li>', { html: content}));
+				list.push($('<li>', { html:content }));
 			})
 			// cleans up text input fields
 			form.trigger('reset');

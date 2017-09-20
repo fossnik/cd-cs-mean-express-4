@@ -54,6 +54,7 @@ app.get('/cities/:city', function(request, response){
 });
 
 // Using multiple route handlers is useful for re-using middleware that load resources, perform validations, authentication, etc.
+// parseUrlencoded is a middleware that runs prior to the function.
 app.post('/cities', parseUrlencoded, function(request, response) {
 	// reading request data - returns form data
 	var newCity = request.body;
