@@ -4,9 +4,11 @@ $(function(){
 	function appendToList(someCities) {
 		var html = "";
 		// have to use Object.keys so forEach can have an array, bc objecs NG
-		Object.keys(someCities).forEach(function(city){
-			html += "<li>" + city + "</li>";
-			html += '<a href="#" data-city="'+city+'">REMOVE</a>';
+		Object.keys(someCities).forEach(function(city, index){
+			html += "<tr>"
+				html += "<td>"+city+",&nbsp;<em>"+Object.values(someCities)[index]+"</em></td>";
+				html += "<td><button onclick=''>REMOVE</button></td>";
+			html += "</tr>";
 		})
 		$('.cities').html(html);
 	}

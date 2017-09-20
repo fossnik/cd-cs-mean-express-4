@@ -2,16 +2,21 @@
 	<h1>MEAN Express #4 - Cities</h1>
 
 	<h3>Our Cities</h3>
-	<ul>
-		<li class='cities'></li>
-	</ul>
 
-	<form style="background: #aff; text-align: center">
-		<legend>Input a New City</legend>
-		<input name="city" required="true" minlength="4" placeholder="city"><br>
-		<input name="state" required="true" minlength="2" placeholder="state"><br>
-		<input type="submit">
-	</form>
+	<table class="flex-container">
+		<tbody class='cities'></tbody>
+	<table>
+
+	<hr>
+
+	<div style="background: #aff; text-align: center">
+		<form>
+			<legend>Input a New City</legend>
+			<input name="city" required="true" minlength="4" placeholder="city"><br>
+			<input name="state" required="true" minlength="2" placeholder="state"><br>
+			<input type="submit">
+		</form>
+	</div>
 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="client.js"></script>
