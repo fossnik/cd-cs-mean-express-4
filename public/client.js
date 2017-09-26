@@ -43,6 +43,7 @@ $(function(){
 		$.ajax({
 			type: 'DELETE', url: '/cities/' + target.data('city')
 		}).done(function() {
+			alert(target.data('city'))
 			// removes <tr> table element containing the link
 			target.parents('tr').remove();
 		});

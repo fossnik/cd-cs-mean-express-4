@@ -8,16 +8,16 @@ var parseUrlencoded = bodyParser.urlencoded({extended:false});
 app.use(express.static('public'));
 
 // route for /cities - do AJAX for html injection
-var someCities = {"Providence": "Rhode Island",
-									"Austin": "Texas",
-									"Melbourne": "Australia",
-									"Detroit": "Michegan",
-									"Marseille": "France",
-									"Woonsocket": "Rhode Island",
-									"Accra": "Ghana",
-									"Coventry": "Rhode Island",
-									"Cordoba": "Argentina",
-									"Edinburgh": "Scotland"};
+var someCities = 	{"Providence": "Rhode Island",
+			"Austin": "Texas",
+			"Melbourne": "Australia",
+			"Detroit": "Michegan",
+			"Marseille": "France",
+			"Woonsocket": "Rhode Island",
+			"Accra": "Ghana",
+			"Coventry": "Rhode Island",
+			"Cordoba": "Argentina",
+			"Edinburgh": "Scotland"};
 
 app.get('/cities', function(request, response){
 	// query validation
@@ -69,7 +69,6 @@ app.delete('/cities/:city', function(request, response){
 	delete someCities[request.city];
 	response.sendStatus(200);
 });
-
 
 // serving up fresh HTML on port 8000
 app.listen(8000, function () {
